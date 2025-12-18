@@ -1,8 +1,0 @@
-STANDARDS/
-├── artifact-ownership.md
-├── file-naming-conventions.md
-├── stack-selection-policy.md
-├── security-baseline.md
-├── observability-alerting-baseline.md
-├── logging-requirements.md
-└── release-policy.md
