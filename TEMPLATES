@@ -1,0 +1,6 @@
+TEMPLATES/
+├── adr-template.md
+├── agent-task-spec-template.md
+├── pr-template.md
+├── incident-postmortem-template.md
+└── executive-brief-template.md
