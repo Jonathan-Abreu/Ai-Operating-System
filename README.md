@@ -1,188 +1,194 @@
-# Ai-Operating-System
-Overview
+# AI Operating System
 
-This repository defines the authoritative operating model for an AI-native software organization.
-It establishes how work is governed, planned, executed, verified, and recorded across all projects using specialized AI agents under centralized human authority.
+## 1. Overview
 
-This is not a project repository and not an application codebase.
+This repository defines the **authoritative operating model** for an **AI-native software organization**.
 
-It is the constitutional layer that governs:
+It establishes how work is:
 
-Agent roles and boundaries
+1. Governed  
+2. Planned  
+3. Executed  
+4. Verified  
+5. Logged  
+6. Released  
 
-Approval gates and escalation paths
+using **specialized AI agents** under **centralized human authority**.
 
-Inter-agent communication contracts
+This is **not**:
+- An application repository  
+- A project codebase  
+- A client-specific implementation  
 
-Workflow orchestration standards
+This **is**:
+- The **constitutional layer** of the organization  
+- The source of truth for **agent roles, contracts, and workflows**
 
-Logging, auditability, and institutional memory
+If a project does not comply with this repository, it is considered **out of compliance**.
 
-If a project does not conform to the standards in this repository, it is considered out of compliance.
+---
 
-Core Principles
+## 2. Core Principles
 
-Centralized Human Governance
-A single human authority (“Mission Control”) retains final approval over scope, architecture, and releases.
+1. **Centralized Human Governance**
+   - A single human authority (“Mission Control”) retains final approval over:
+     - Scope
+     - Architecture
+     - Releases
 
-Artifact-Driven Execution
-All decisions and actions are governed by versioned artifacts, not conversations or chat memory.
+2. **Artifact-Driven Execution**
+   - All decisions and actions are governed by **versioned artifacts**
+   - Conversations and chat memory are never authoritative
 
-Maker–Checker Enforcement
-No agent is allowed to self-certify its own work. Independent verification is mandatory.
+3. **Maker–Checker Enforcement**
+   - No agent may certify its own work
+   - Independent verification is mandatory
 
-Strict Separation of Duties
-Planning, execution, verification, and logging are handled by distinct agent roles.
+4. **Strict Separation of Duties**
+   - Planning, execution, verification, and logging are handled by **different agents**
 
-Deterministic Automation
-Workflows are orchestrated mechanically via n8n; no agent invents process or bypasses gates.
+5. **Deterministic Automation**
+   - Workflows are orchestrated mechanically via **n8n**
+   - No agent invents process or bypasses gates
 
-Auditability by Default
-Every action produces a log. Every decision is traceable. Nothing relies on tribal knowledge.
+6. **Auditability by Default**
+   - Every action is logged
+   - Every decision is traceable
+   - No tribal knowledge
 
-What This Repository Contains
-/AGENTS
+---
 
-Authoritative definitions of all agent roles across the organization, including:
+## 3. Repository Structure
 
-Governance roles (Mission Control, approval gates)
+### 3.1 `/AGENTS`
 
-Planning and architecture agents (ChatGPT roles)
+Authoritative definitions for **all agent roles** in the organization, including:
 
-Human-operations agents (Motion AI roles)
+- Governance agents (Mission Control, approval gates)
+- Planning and architecture agents (ChatGPT roles)
+- Human-operations agents (Motion AI roles)
+- Execution agents (Frontend / Backend)
+- Quality and reliability agents (Google Jules)
+- Logging and reporting agents
 
-Execution agents (Frontend / Backend)
+Each agent definition specifies:
+- Charter
+- Allowed actions
+- Forbidden actions
+- Required outputs
+- Stop-the-line conditions
 
-Quality and reliability agents (Google Jules)
+---
 
-Logging and reporting agents
-
-Each agent file defines:
-
-Charter
-
-Allowed actions
-
-Forbidden actions
-
-Required outputs
-
-Stop-the-line conditions
-
-/PACKETS
+### 3.2 `/PACKETS`
 
 Standardized communication contracts used between agents and workflows.
 
-Examples:
+Examples include:
+- Intent packets
+- Meeting context packets
+- Work log packets
+- Blocker escalation packets
+- Release readiness memos
 
-Intent packets
+These packets ensure:
+- No free-form interpretation
+- Deterministic routing
+- Reliable automation
 
-Meeting context packets
+---
 
-Work log packets
+### 3.3 `/WORKFLOWS`
 
-Blocker escalation packets
+Declarative descriptions of **n8n-orchestrated workflows**, including:
 
-Release readiness memos
+- Input ingestion (Telegram, Motion AI)
+- Planning and review loops
+- Execution routing
+- Quality gates
+- Knowledge capture
 
-These packets ensure agents never rely on free-form interpretation.
+Workflows define **how work moves**, not what the work is.
 
-/WORKFLOWS
+---
 
-Declarative descriptions of system workflows orchestrated by n8n, including:
+### 3.4 `/STANDARDS`
 
-Input ingestion (Telegram, Motion AI)
+Non-negotiable organizational policies applied to **every project**, including:
 
-Planning and review loops
+- Artifact ownership
+- File naming conventions
+- Stack selection rules
+- Security baseline requirements
+- Observability and alerting standards
+- Release discipline
 
-Execution routing
+---
 
-Quality gates
-
-Knowledge capture
-
-Workflows define how work moves, not what the work is.
-
-/STANDARDS
-
-Non-negotiable organizational policies, including:
-
-Artifact ownership
-
-Naming conventions
-
-Stack selection rules
-
-Security baselines
-
-Observability and alerting requirements
-
-Release discipline
-
-These standards apply to every project.
-
-/TEMPLATES
+### 3.5 `/TEMPLATES`
 
 Canonical templates for required artifacts, such as:
 
-Architecture Decision Records (ADRs)
+- Architecture Decision Records (ADRs)
+- Agent Task Specifications (ATS)
+- Pull Requests
+- Incident postmortems
+- Executive summaries
 
-Agent Task Specs (ATS)
+Templates ensure:
+- Consistency
+- Reviewability
+- Automation compatibility
 
-Pull Requests
+---
 
-Incident postmortems
+## 4. What This Repository Does *Not* Contain
 
-Executive summaries
+This repository intentionally does **not** include:
 
-Templates ensure consistency and automation compatibility.
+- Client-specific requirements
+- Application source code
+- Infrastructure credentials
+- Environment configuration
+- Project-level decisions
 
-What This Repository Does Not Contain
+Those belong in **project repositories** created from the approved project template.
 
-Client-specific requirements
+---
 
-Application code
-
-Infrastructure credentials
-
-Environment configuration
-
-Project-level decisions
-
-Those belong in project repositories created from the approved project template.
-
-Relationship to Project Repositories
+## 5. Relationship to Project Repositories
 
 Every client or product project:
 
-Is created from a standardized project template repo
+1. Is created from a standardized **project template repository**
+2. Inherits the rules defined in this repository
+3. Must comply with all agent contracts and standards
+4. Is governed by the workflows defined here
 
-Inherits the rules defined here
+This repository is **upstream** of all project repositories.
 
-Must comply with the agent contracts and standards in this repository
+---
 
-Is governed by the workflows described here
+## 6. Change Management
 
-This repository is upstream of all projects.
+Because this repository defines **organizational law**:
 
-Change Management
-
-Because this repository defines organizational law:
-
-Changes should be rare
-
-Changes must be intentional
-
-Changes should be reviewed with the same rigor as production architecture
+- Changes should be **rare**
+- Changes must be **intentional**
+- Changes should be reviewed with the same rigor as production architecture
 
 Unreviewed or ad-hoc modifications are strongly discouraged.
 
-Guiding Rule
+---
 
-GitHub defines the organization.
-AI agents operate within it.
-Humans approve.
+## 7. Guiding Rule
 
-Status
+> **GitHub defines the organization.**  
+> **AI agents operate within it.**  
+> **Humans approve.**
 
-This repository is under active development as the foundational governance layer for an AI-native operating model.
+---
+
+## 8. Status
+
+This repository is under active development as the foundational governance layer for an **AI-native operating model**.
