@@ -1,0 +1,8 @@
+WORKFLOWS/
+├── n8n-architecture.md
+├── telegram-intake-workflow.md
+├── motion-context-ingestion-workflow.md
+├── planning-orchestration-workflow.md
+├── execution-routing-workflow.md
+├── jules-quality-gate-workflow.md
+└── knowledge-capture-workflow.md
