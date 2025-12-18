@@ -1,8 +1,0 @@
-PACKETS/
-├── intent-packet.md
-├── meeting-context-packet.md
-├── email-draft-packet.md
-├── schedule-change-packet.md
-├── work-log-packet.md
-├── blocker-packet.md
-└── release-readiness-memo.md
