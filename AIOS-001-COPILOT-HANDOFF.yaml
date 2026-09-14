@@ -1,0 +1,135 @@
+# AIOS-001 — machine-readable continuity companion
+# Authoritative narrative is AIOS-001-COPILOT-HANDOFF.md. This file is a summary index.
+# Temporary continuity bridge, NOT a constitutional source of truth.
+
+project_id: AIOS-001
+project_name: AI Operating System
+status: GOVERNANCE_BOOTSTRAP_READY
+execution_mode: SINGLE_ACTIVE_PROJECT
+active_project: AIOS-001
+target_milestone: "AI-OS v1.0 — Functional Development Kernel"
+
+repository: Jonathan-Abreu/Ai-Operating-System
+repository_visibility: private
+repository_owner_type: User
+baseline_sha: 40b8201013816f2a7c10dfb15bb1ecebae8e6ae1
+baseline_date: 2025-12-19T00:37:52Z
+default_branch: main
+main_protected: false
+rulesets_configured: 0
+total_commits: 118
+pull_requests_before_handoff: 0
+
+handoff_from: claude-code
+handoff_to: github-copilot
+handoff_date: 2026-09-14
+handoff_branch: handoff/claude-to-copilot-aios-001
+primary_handoff_file: AIOS-001-COPILOT-HANDOFF.md
+
+git_write_scope: continuity-documentation-only
+governance_bootstrap_authorized: false
+governance_activated: false
+
+maker_identity: aios-runtime
+maker_identity_exists: false
+independent_checker: Jonathan-Abreu
+codeowner: Jonathan-Abreu
+merge_authority: Jonathan-Abreu
+break_glass_actor: Jonathan-Abreu
+break_glass_scope: pull_request_only
+maker_bypass_allowed: false
+
+github_first_governance: true
+enforcement_model: G1
+preferred_substrate: github_rulesets
+signed_commits_required: false
+required_approving_reviews: 1
+
+ai_integration_has_admin_permission: false
+settings_must_be_applied_manually_by: Mission Control (GitHub web UI)
+
+bootstrap_decision_blockers_remaining: 0
+
+pending_capability_checks:
+  - id: C1
+    check: ruleset creation available in web UI
+    status: UNVERIFIED
+    owner: Mission Control
+  - id: C2
+    check: Evaluate enforcement mode available
+    status: UNVERIFIED
+    owner: Mission Control
+  - id: C3
+    check: a runtime can authenticate as aios-runtime
+    status: UNRESOLVED
+    owner: Mission Control
+    blocking: true
+
+binding_decisions:
+  - id: ADR-0001
+    status: APPROVED_WITH_CONDITIONS
+    summary: "ROLE -> CAPABILITY -> PERMISSION -> CONTRACT -> RUNTIME; provider never owns role identity"
+  - id: MC-30
+    record: ART-93
+    status: APPROVED
+    summary: "aios-runtime = shared AI maker identity; Jonathan-Abreu = independent checker/CODEOWNER/merge"
+  - id: MC-02
+    record: ART-94
+    status: APPROVED
+    summary: "G1 GitHub-first governance; Rulesets preferred, pending web-UI create confirmation"
+  - id: MC-06
+    record: ART-95
+    status: APPROVED
+    summary: "staged enforcement; maker has no bypass; MC sole PR-scoped break-glass; bypass != approval"
+  - id: MC-04
+    record: ART-96
+    status: APPROVED
+    summary: "signed commits deferred for MVP; not a bootstrap blocker"
+  - id: Block-0.1
+    record: ART-25
+    status: APPROVED
+  - id: Block-0.2
+    record: ART-26
+    status: APPROVED
+    summary: "governance before remediation; activation gated on identity implemented AND verified"
+
+not_yet_approved:
+  - Amended ADR-0002 (Under Review / MC Pending)
+  - ADR-0003
+  - ADR-0004
+  - ADR-0006
+  - ADR-0007
+  - ADR-0008
+  - Target Architecture
+
+hard_sequencing_rules:
+  - ADR-0003 must be disposed before ADR-0007
+  - Target Architecture disposed last; must not approve ADR-0002..0008 by reference
+  - governance established before substantive remediation (Block 0.2)
+
+next_action: >-
+  Build the governance bootstrap implementation slice from the binding decisions
+  recorded in AIOS-001-COPILOT-HANDOFF.md section 4, then implement the bounded
+  governance bootstrap in section 9 — ONLY after Mission Control explicitly
+  authorizes execution and capability checks C1-C3 are resolved. Do not begin
+  wider MVP implementation.
+
+legacy_defects:
+  leading_space_directories:
+    - "AGENTS/ FRONTEND"
+    - "AGENTS/ GOVERNANCE"
+    - "AGENTS/ RESEARCH"
+  provider_named_role_directories:
+    - AGENTS/CHATGPT
+    - AGENTS/JULES
+    - AGENTS/MOTION_AI
+  empty_stubs_total: 26
+  empty_stub_blob_sha: 8b137891791fe96927ad78e64b0aad7bded08bdc
+  truncated_file: AGENTS/LOGGING/executive-summary-agent.md
+  readme_couples_n8n: true
+
+role_inventory:
+  role_charters: 33
+  governance_policy_docs: 3
+  overview: 1
+  total_agents_md_files: 37
